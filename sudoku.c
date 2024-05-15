@@ -44,6 +44,49 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
+   int i, j , k, num;
+   int row_check[9], col_check[9], box_check[9];
+   for (i = 0; i < 9; i++) {
+      for (j = 0; j < 9; j++){
+         if (n->sudo[i][j] != 0){
+            row_check[n->sudo[i][j] - 1] = 0;
+            col_check[n->sudo[j][i] - 1] = 0;
+         }
+      }
+   }
+
+   for (i = 0; i < 9; i++){
+      for (j = 0; j < 9; j++){
+         if (n->sudo[i][j] != 0){
+            if (row_check[n->sudo[i][j] - 1] == 1) return 0;
+            row_check[n->sudo[i][j] - 1] = 1;
+         }
+         if (n->sudo[j][i] != 0){
+            if (col_check[n->sudo[j][i] - 1] == 1) return 0;
+            col_check[n->sudo[j][i] - 1] = 1;
+         }
+      }
+      for (k = 0; k < 9; k++) {
+         row_check[k] = 0;
+         col_check[k] = 0;
+      }
+   }
+
+   for (i = 0; i < 9; i += 3) {
+      for (j = 0; j < 9; j += 3) {
+         for (k = 0; k < 9; k++) {
+            box_check[k] = 0;
+         }
+            for (k = 0; k < 9; k++) {
+               int x = i + k / 3;
+               int y = j + k % 3;
+               if (n->sudo[x][y] != 0) {
+                  if (box_check[n->sudo[x][y] - 1] == 1) return 0;
+                  box_check[n->sudo[x][y] - 1] = 1;
+               }
+            }
+      }
+   }
 
     return 1;
 }
@@ -51,6 +94,7 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n){
     List* list=createList();
+    
     return list;
 }
 
