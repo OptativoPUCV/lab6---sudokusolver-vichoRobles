@@ -13,3 +13,9 @@ sudoku.c:47:18: error: unused variable ‘num’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3c7a399
+Wed 15 May 2024 05:31:31 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  3|4
+total_score: 20/70
+cdcd22c
