@@ -41,3 +41,9 @@ sudoku.c:147:33: error: ‘Node’ has no member named ‘data’
       |                                 ^~
 Compilation failed
 6f52aea
+Sat 18 May 2024 11:24:57 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  10|0
+total_score: 70/70
+74e6aa6
