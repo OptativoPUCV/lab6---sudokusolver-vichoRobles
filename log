@@ -31,3 +31,13 @@ Wed 15 May 2024 05:38:30 PM UTC:
  tests:  7|1
 total_score: 55/70
 fd18467
+Sat 18 May 2024 11:24:27 PM UTC: 
+ sudoku.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:147:33: error: ‘Node’ has no member named ‘data’
+  147 |          push(stack, adj_current->data);
+      |                                 ^~
+Compilation failed
+6f52aea
